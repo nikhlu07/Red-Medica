@@ -1,0 +1,77 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\HPP\\Downloads\\hacks\\Red-Medica\\contracts\\solidity\\contracts\\MedicalSupplyChain.sol": {
+      "lastModificationDate": 1760017566951,
+      "contentHash": "879bce5518819a5a965dae15e81da86b",
+      "sourceName": "contracts/MedicalSupplyChain.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "MedicalSupplyChain"
+      ]
+    },
+    "C:\\Users\\HPP\\Downloads\\hacks\\Red-medica\\contracts\\solidity\\contracts\\MedicalSupplyChain.sol": {
+      "lastModificationDate": 1763297163499,
+      "contentHash": "879bce5518819a5a965dae15e81da86b",
+      "sourceName": "contracts/MedicalSupplyChain.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "MedicalSupplyChain"
+      ]
+    }
+  }
+}

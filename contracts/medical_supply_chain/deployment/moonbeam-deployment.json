@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-10-10T02:36:56.317Z",
+  "network": "moonbase",
+  "networkName": "Moonbase Alpha",
+  "chainId": 1287,
+  "contractAddress": "0xAD6655fa10DB0DDDc079774198E76c457E2e0C8C",
+  "deployer": "0x2E2fA3250799DcCe940bAb300B81eB19A1706C44",
+  "explorer": "https://moonbase.moonscan.io/address/0xAD6655fa10DB0DDDc079774198E76c457E2e0C8C",
+  "transactionUrl": "https://moonbase.moonscan.io/tx/undefined"
+}

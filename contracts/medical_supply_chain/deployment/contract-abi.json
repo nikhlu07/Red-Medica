@@ -1,0 +1,542 @@
+{
+  "source": {
+    "hash": "0x1234567890abcdef1234567890abcdef12345678",
+    "language": "ink! 4.2.0",
+    "compiler": "rustc 1.90.0"
+  },
+  "contract": {
+    "name": "medical_supply_chain",
+    "version": "0.1.0",
+    "authors": ["Red Medica Team"]
+  },
+  "spec": {
+    "constructors": [
+      {
+        "args": [],
+        "default": false,
+        "docs": [
+          "Constructor that initializes the contract with the caller as owner and authorized manufacturer"
+        ],
+        "label": "new",
+        "payable": false,
+        "returnType": {
+          "displayName": ["ink_primitives", "ConstructorResult"],
+          "type": 0
+        },
+        "selector": "0x9bae9d5e"
+      }
+    ],
+    "docs": [],
+    "environment": {
+      "accountId": {
+        "displayName": ["AccountId"],
+        "type": 1
+      },
+      "balance": {
+        "displayName": ["Balance"],
+        "type": 2
+      },
+      "blockNumber": {
+        "displayName": ["BlockNumber"],
+        "type": 3
+      },
+      "chainExtension": {
+        "displayName": ["ChainExtension"],
+        "type": 4
+      },
+      "hash": {
+        "displayName": ["Hash"],
+        "type": 5
+      },
+      "maxEventTopics": 4,
+      "timestamp": {
+        "displayName": ["Timestamp"],
+        "type": 6
+      }
+    },
+    "events": [
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "product_id",
+            "type": {
+              "displayName": ["u32"],
+              "type": 7
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "manufacturer",
+            "type": {
+              "displayName": ["AccountId"],
+              "type": 1
+            }
+          },
+          {
+            "docs": [],
+            "indexed": false,
+            "label": "name",
+            "type": {
+              "displayName": ["String"],
+              "type": 8
+            }
+          },
+          {
+            "docs": [],
+            "indexed": false,
+            "label": "batch_number",
+            "type": {
+              "displayName": ["String"],
+              "type": 8
+            }
+          }
+        ],
+        "docs": [],
+        "label": "ProductRegistered"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "product_id",
+            "type": {
+              "displayName": ["u32"],
+              "type": 7
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "from",
+            "type": {
+              "displayName": ["AccountId"],
+              "type": 1
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "to",
+            "type": {
+              "displayName": ["AccountId"],
+              "type": 1
+            }
+          },
+          {
+            "docs": [],
+            "indexed": false,
+            "label": "location",
+            "type": {
+              "displayName": ["String"],
+              "type": 8
+            }
+          }
+        ],
+        "docs": [],
+        "label": "CustodyTransferred"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "manufacturer",
+            "type": {
+              "displayName": ["AccountId"],
+              "type": 1
+            }
+          },
+          {
+            "docs": [],
+            "indexed": false,
+            "label": "authorized",
+            "type": {
+              "displayName": ["bool"],
+              "type": 9
+            }
+          }
+        ],
+        "docs": [],
+        "label": "ManufacturerAuthorized"
+      }
+    ],
+    "lang_error": {
+      "displayName": ["ink", "LangError"],
+      "type": 10
+    },
+    "messages": [
+      {
+        "args": [
+          {
+            "label": "name",
+            "type": {
+              "displayName": ["String"],
+              "type": 8
+            }
+          },
+          {
+            "label": "batch_number",
+            "type": {
+              "displayName": ["String"],
+              "type": 8
+            }
+          },
+          {
+            "label": "manufacturer_name",
+            "type": {
+              "displayName": ["String"],
+              "type": 8
+            }
+          },
+          {
+            "label": "quantity",
+            "type": {
+              "displayName": ["u32"],
+              "type": 7
+            }
+          },
+          {
+            "label": "mfg_date",
+            "type": {
+              "displayName": ["u64"],
+              "type": 6
+            }
+          },
+          {
+            "label": "expiry_date",
+            "type": {
+              "displayName": ["u64"],
+              "type": 6
+            }
+          },
+          {
+            "label": "category",
+            "type": {
+              "displayName": ["String"],
+              "type": 8
+            }
+          }
+        ],
+        "default": false,
+        "docs": [
+          "Register a new product (only authorized manufacturers)"
+        ],
+        "label": "register_product",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": ["ink", "MessageResult"],
+          "type": 11
+        },
+        "selector": "0x12345678"
+      },
+      {
+        "args": [
+          {
+            "label": "product_id",
+            "type": {
+              "displayName": ["u32"],
+              "type": 7
+            }
+          },
+          {
+            "label": "to",
+            "type": {
+              "displayName": ["AccountId"],
+              "type": 1
+            }
+          },
+          {
+            "label": "location",
+            "type": {
+              "displayName": ["String"],
+              "type": 8
+            }
+          }
+        ],
+        "default": false,
+        "docs": [
+          "Transfer custody of a product"
+        ],
+        "label": "transfer_custody",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": ["ink", "MessageResult"],
+          "type": 12
+        },
+        "selector": "0x23456789"
+      },
+      {
+        "args": [
+          {
+            "label": "product_id",
+            "type": {
+              "displayName": ["u32"],
+              "type": 7
+            }
+          }
+        ],
+        "default": false,
+        "docs": [
+          "Verify product authenticity"
+        ],
+        "label": "verify_product",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": ["Option"],
+          "type": 13
+        },
+        "selector": "0x34567890"
+      },
+      {
+        "args": [
+          {
+            "label": "product_id",
+            "type": {
+              "displayName": ["u32"],
+              "type": 7
+            }
+          }
+        ],
+        "default": false,
+        "docs": [
+          "Get product transfer history"
+        ],
+        "label": "get_transfer_history",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": ["Vec"],
+          "type": 14
+        },
+        "selector": "0x45678901"
+      },
+      {
+        "args": [
+          {
+            "label": "manufacturer",
+            "type": {
+              "displayName": ["AccountId"],
+              "type": 1
+            }
+          },
+          {
+            "label": "authorized",
+            "type": {
+              "displayName": ["bool"],
+              "type": 9
+            }
+          }
+        ],
+        "default": false,
+        "docs": [
+          "Authorize a manufacturer (only owner)"
+        ],
+        "label": "authorize_manufacturer",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": ["ink", "MessageResult"],
+          "type": 12
+        },
+        "selector": "0x56789012"
+      },
+      {
+        "args": [
+          {
+            "label": "account",
+            "type": {
+              "displayName": ["AccountId"],
+              "type": 1
+            }
+          }
+        ],
+        "default": false,
+        "docs": [
+          "Check if account is authorized manufacturer"
+        ],
+        "label": "is_authorized_manufacturer",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": ["bool"],
+          "type": 9
+        },
+        "selector": "0x67890123"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [
+          "Get contract owner"
+        ],
+        "label": "get_owner",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": ["AccountId"],
+          "type": 1
+        },
+        "selector": "0x78901234"
+      },
+      {
+        "args": [],
+        "default": false,
+        "docs": [
+          "Get next product ID"
+        ],
+        "label": "get_next_product_id",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": ["u32"],
+          "type": 7
+        },
+        "selector": "0x89012345"
+      },
+      {
+        "args": [
+          {
+            "label": "manufacturer",
+            "type": {
+              "displayName": ["AccountId"],
+              "type": 1
+            }
+          }
+        ],
+        "default": false,
+        "docs": [
+          "Get all products by manufacturer"
+        ],
+        "label": "get_products_by_manufacturer",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": ["Vec"],
+          "type": 15
+        },
+        "selector": "0x90123456"
+      }
+    ]
+  },
+  "storage": {
+    "root": {
+      "layout": {
+        "struct": {
+          "fields": [
+            {
+              "layout": {
+                "root": {
+                  "layout": {
+                    "leaf": {
+                      "key": "0x00000000",
+                      "ty": 16
+                    }
+                  },
+                  "root_key": "0x00000000"
+                }
+              },
+              "name": "products"
+            },
+            {
+              "layout": {
+                "root": {
+                  "layout": {
+                    "leaf": {
+                      "key": "0x00000001",
+                      "ty": 17
+                    }
+                  },
+                  "root_key": "0x00000001"
+                }
+              },
+              "name": "transfers"
+            },
+            {
+              "layout": {
+                "leaf": {
+                  "key": "0x00000002",
+                  "ty": 7
+                }
+              },
+              "name": "next_product_id"
+            },
+            {
+              "layout": {
+                "leaf": {
+                  "key": "0x00000003",
+                  "ty": 1
+                }
+              },
+              "name": "owner"
+            },
+            {
+              "layout": {
+                "root": {
+                  "layout": {
+                    "leaf": {
+                      "key": "0x00000004",
+                      "ty": 9
+                    }
+                  },
+                  "root_key": "0x00000004"
+                }
+              },
+              "name": "manufacturers"
+            }
+          ],
+          "name": "MedicalSupplyChain"
+        }
+      },
+      "root_key": "0x00000000"
+    }
+  },
+  "types": [
+    {
+      "id": 0,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 18
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 10
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 18
+          },
+          {
+            "name": "E",
+            "type": 10
+          }
+        ],
+        "path": ["Result"]
+      }
+    }
+  ]
+}

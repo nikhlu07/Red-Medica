@@ -1,0 +1,45 @@
+{
+  "networks": {
+    "rococo": {
+      "name": "Rococo Testnet",
+      "rpc": "wss://rococo-rpc.polkadot.io",
+      "explorer": "https://rococo.subscan.io/",
+      "faucet": "https://paritytech.github.io/polkadot-testnet-faucet/",
+      "decimals": 12,
+      "symbol": "ROC"
+    },
+    "westend": {
+      "name": "Westend Testnet", 
+      "rpc": "wss://westend-rpc.polkadot.io",
+      "explorer": "https://westend.subscan.io/",
+      "faucet": "https://paritytech.github.io/polkadot-testnet-faucet/",
+      "decimals": 12,
+      "symbol": "WND"
+    }
+  },
+  "deployment": {
+    "gas_limit": 200000000000,
+    "storage_deposit_limit": null,
+    "constructor_args": [],
+    "salt": null
+  },
+  "contract_info": {
+    "name": "medical_supply_chain",
+    "version": "0.1.0",
+    "description": "Medical supply chain tracking smart contract for Red Medica",
+    "repository": "https://github.com/red-medica/contracts"
+  },
+  "estimated_costs": {
+    "deployment": {
+      "gas": "~200,000 units",
+      "storage": "~50 KB",
+      "tokens": "~0.1 ROC/WND"
+    },
+    "operations": {
+      "register_product": "~150,000 gas",
+      "transfer_custody": "~100,000 gas", 
+      "verify_product": "~50,000 gas",
+      "authorize_manufacturer": "~80,000 gas"
+    }
+  }
+}

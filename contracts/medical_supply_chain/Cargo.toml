@@ -1,0 +1,36 @@
+[package]
+name = "medical_supply_chain"
+version = "0.1.0"
+authors = ["Red Medica Team"]
+edition = "2021"
+
+[dependencies]
+ink = { version = "4.3", default-features = false }
+scale = { package = "parity-scale-codec", version = "3", default-features = false, features = ["derive"] }
+scale-info = { version = "2.6", default-features = false, features = ["derive"], optional = true }
+
+# [dev-dependencies]
+# ink_e2e = "4.3"
+
+[lib]
+name = "medical_supply_chain"
+path = "lib.rs"
+crate-type = [
+    "cdylib",
+]
+
+[features]
+default = ["std"]
+std = [
+    "ink/std",
+    "scale/std",
+    "scale-info/std",
+]
+ink-as-dependency = []
+e2e-tests = []
+
+[profile.release]
+overflow-checks = false
+lto = true
+codegen-units = 1
+panic = "abort"
